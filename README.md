@@ -23,10 +23,10 @@ the lander height
 ### components:
 
 1) laptop 
-2) OAK-D usb stereo camera set
+2) OAK-D usb stereo camera set  see: ![OAK-D tutorial](https://docs.luxonis.com/en/latest/pages/depth/)
 2) usb joystick
 3) servo motor
-4) pololu maestro usb servo controller
+4) pololu maestro usb servo controller see  ![Maestro python repo](https://github.com/FRC4564/Maestro)
 5) battery pack (for servo)
 6) Theater set:
 
