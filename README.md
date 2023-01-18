@@ -48,10 +48,10 @@ the lander height
 
 python 3
 
-- install opencv
-- install OAKD package
+- install opencv for python
+- install OAKD python package
 - install pyjoystick
-- install maestro-servo
+- install python maestro-servo
 
 
 
