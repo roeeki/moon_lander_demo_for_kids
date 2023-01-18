@@ -11,20 +11,33 @@ the lander height
 - a laptop for user UI and controlling joystick \ lander cameras \ servo in realtime
 
 
-![lunar_lander_demo_4_kids](https://user-images.githubusercontent.com/32566844/213308360-26e560ea-5466-4d0a-b3fe-dc74cbd4186b.png|width=100)
+![lunar_lander_demo_4_kids](https://user-images.githubusercontent.com/32566844/213308360-26e560ea-5466-4d0a-b3fe-dc74cbd4186b.png)
 
 
 ---
 
-## Demo components:
+## Demo setup:
 
-1) laptop connects to OAK-D via usb and shows depth image, and height above ground
-measurement in real-time.
+### components:
 
-2) laptop gets usb joystick input
+1) laptop 
+2) OAK-D usb stereo camera set
+2) usb joystick
+3) servo motor
+4) pololu maestro usb servo controller
+5) battery pack (for servo)
+6) Theater set:
 
-3) laptop controlls servo using lunar gravity model + user instructions via pololu maestro usb servo controller
+    - lunar lander mockup 
+    - 1m frame with polley and cord
+    - lunar surface mockup 
 
+
+### setup:
+
+- laptop gets joystick input via USB
+- laptop controlles servo via servo controller (USB input)
+- laptop displays stereo camera OAK D depth image and height above surface in real time
 
 
 ---
@@ -38,16 +51,6 @@ python 3
 - install pyjoystick
 - install maestro-servo
 
-
-
----
-
-## setup:
-
-1) connect ... 
-2) connect ... 
-3) connect ... 
-4) run ...
 
 
 
