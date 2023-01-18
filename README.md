@@ -1,5 +1,8 @@
 # moon_lander_demo_for_kids
 This is a cool moon landing demo for kids.
+We simulate a lunar lander with camera relative navigation system.
+User gets height readings from camera, and uses a joystick to controll lander height.
+The mission is to try and land the lander safely!
 
 
 The demo is made of:
