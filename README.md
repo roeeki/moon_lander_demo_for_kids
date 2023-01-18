@@ -11,8 +11,7 @@ the lander height
 - a laptop for user UI and controlling joystick \ lander cameras \ servo in realtime
 
 
-![lunar_lander_demo_4_kids](https://user-images.githubusercontent.com/32566844/213308360-26e560ea-5466-4d0a-b3fe-dc74cbd4186b.png)
-
+![lunar_lander_demo_4_kids](https://user-images.githubusercontent.com/32566844/213310963-2004f37a-1c88-407b-a339-2b3ddd92da6f.png)
 
 ---
 
