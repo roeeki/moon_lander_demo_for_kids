@@ -42,6 +42,47 @@ the lander height
 - laptop displays stereo camera OAK D depth image and height above surface in real time
 
 
+
+### requierments:
+ 
+Our main requierments are:
++ lander max speed Vmax = 0.1m/sec
++ lander weight W=0.25kg
+
+We choose servo motor and wheel accordingly.
+
+Noting that:
+
+        r - wheel radious [m]
+        w - angular speed [rad/sec]
+        f - motor frequency [sec/rotation]
+
+        w[rad/sec] = v[m/sec] / r[m]
+        f[sec/rotation] = 2 / w[rad/sec] = 2 * r[m] / v[m/sec]
+        
+        torque[m*Kg] = r[m]*W[kg]
+
+
+
+we choose servo and wheel so that:
+
+        f[sec/rotation] >= 2 * r[m] / vmax[m/sec] = 2 * 0.01 * r[cm] / 0.1 = 0.2 * r[cm]
+        f[sec/60deg] >= 0.017 * r[cm]
+
+        torque[kg*cm] >= 0.25*r[cm]
+
+
+
+As an example we can choose:
+
+servo with f >= 0.033[sec/60deg] , torque >= 0.5[kg*cm] and 2cm wheel
+
+or
+
+servo with f >= 0.017[sec/60deg] , torque >= 0.25[kg*cm] and 1cm wheel
+
+
+
 ---
 
 ## instalation:
@@ -52,7 +93,6 @@ python 3
 - install OAKD python package
 - install pyjoystick
 - install python maestro-servo
-
 
 
 
