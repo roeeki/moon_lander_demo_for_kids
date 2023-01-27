@@ -94,5 +94,21 @@ python 3
 - install pyjoystick
 - install python maestro-servo
 
+### Maestro-servo installation
+
+install pyserial:
+
+                pip install pyserial
+
+set the Maestro-servo to `USB Dual Port`:
+
+1. Download the Maestro driver for linux for [here](https://www.pololu.com/docs/0J40/3.b)
+2. tar the file:
+
+                tar -xzvf ~/Downloads/maestro-linux-220509.tar.gz
+3. follow the `README.txt` file after tarring it.
+
+4. run the `MaestroControlCenter` application and in the `setup` tab change it to `USB dual Port`.
+
 
 
