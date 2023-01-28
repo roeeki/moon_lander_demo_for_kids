@@ -104,7 +104,14 @@ Install depthai python:
          my_python OAK_D_stereo_depth_demo.py
 
 
-- install pyjoystick
+- connect to joystick
+
+  1. install pygame in your python env
+  2. connect joystick to usb
+  3. test your joystick:
+  
+         my_python joystick_demo.py
+
 - install python maestro-servo
 
 
