@@ -46,10 +46,23 @@ the lander height
 
 ## instalation:
 
-python 3
+Install depthai python:
 
-- install opencv for python
-- install OAKD python package
+- install python 3
+- make your virtual python env (to be used for this project)
+- install depthai module for python:
+  1. clone depthai python repo:
+
+         git clone https://github.com/luxonis/depthai-python.git
+  2. run depthai python install script in your python env:
+
+         my_python ../depthai-python/examples/install_requirements.py
+
+  3. test your python env. try to run:
+  
+         my_python OAK_D_stereo_depth_demo.py
+
+
 - install pyjoystick
 - install python maestro-servo
 
