@@ -1,13 +1,13 @@
 # moon_lander_demo_for_kids
 This is a cool moon landing demo for kids.
 We simulate a lunar lander with camera relative navigation system.
-User gets height readings from camera, and uses a joystick to controll lander height.
+User gets height readings from camera, and uses a joystick to control lander height.
 The mission is to try and land the lander safely!
 
 
 The demo is made of:
 - a lunar lander model with OAK-D stereo cameras to measure distance to ground
-- a 1m height frame with cord and pulley so pulling/releasing the coard takes
+- a 1m height frame with cord and pulley so pulling/releasing the line takes
 the lunar lander up \ down
 - a servo and a joystick to pull \ release the cord, and thus control
 the lander height
@@ -24,11 +24,11 @@ the lander height
 
 1) laptop 
 2) OAK-D usb stereo camera set  see: ![OAK-D tutorial](https://github.com/luxonis/depthai)
-2) usb joystick
-3) servo motor
-4) pololu maestro usb servo controller see  ![Maestro python repo](https://github.com/FRC4564/Maestro)
-5) battery pack (for servo)
-6) Theater set:
+3) usb joystick
+4) servo motor
+5) Pololu maestro usb servo controller see  ![Maestro python repo](https://github.com/FRC4564/Maestro)
+6) battery pack (for servo)
+7) Theater set:
 
     - lunar lander mockup 
     - 1m frame with polley and cord
@@ -38,14 +38,14 @@ the lander height
 ### setup:
 
 - laptop gets joystick input via USB
-- laptop controlles servo via servo controller (USB input)
+- laptop controls servo via servo controller (USB input)
 - laptop displays stereo camera OAK D depth image and height above surface in real time
 
 
 
-### requierments:
+### requirements:
  
-Our main requierments are:
+Our main requirements are:
 + lander max speed Vmax = 0.1m/sec
 + lander weight W=0.25kg
 
@@ -85,7 +85,7 @@ servo with f >= 0.017[sec/60deg] , torque >= 0.25[kg*cm] and 1cm wheel
 
 ---
 
-## instalation:
+## installation:
 
 Install depthai python:
 
