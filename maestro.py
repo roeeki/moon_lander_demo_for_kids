@@ -51,9 +51,7 @@ class Controller:
         if PY2:
             self.usb.write(cmdStr)
         else:
-            print("writing")
             self.usb.write(bytes(cmdStr,'latin-1'))
-            print("done write")
 
     # Set channels min and max value range.  Use this as a safety to protect
     # from accidentally moving outside known safe parameters. A setting of 0
@@ -126,13 +124,9 @@ class Controller:
     # it is not stalled or slowed.
     def getPosition(self, chan):
         cmd = chr(0x10) + chr(chan)
-        print("sending")
         self.sendCmd(cmd)
-        print("sent ...")
         lsb = ord(self.usb.read())
-        print("lsb")
         msb = ord(self.usb.read())
-        print("msb")
         return (msb << 8) + lsb
 
     # Test to see if a servo has reached the set target position.  This only provides
