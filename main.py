@@ -3,9 +3,14 @@
 import cv2
 import depthai as dai
 import numpy as np
-
+import pygame
 
 if __name__ == "__main__":
+
+    pygame.joystick.init()
+    joysticks = [pygame.joystick.Joystick(x) for x in range(pygame.joystick.get_count())]
+    print("joysticks found:")
+    print(joysticks)
 
     # Closer-in minimum depth, disparity range is doubled (from 95 to 190):
     extended_disparity = False
@@ -44,35 +49,40 @@ if __name__ == "__main__":
     monoRight.out.link(depth.right)
     depth.disparity.link(xout.input)
 
-    frame_full = np.zeros((400, 840, 3), dtype=np.uint8)
-
     # Connect to device and start pipeline
     with dai.Device(pipeline) as device:
 
         # Output queue will be used to get the disparity frames from the outputs defined above
         q = device.getOutputQueue(name="disparity", maxSize=4, blocking=False)
 
-        calibData = device.readCalibration()
-        intrinsics = calibData.getCameraIntrinsics(dai.CameraBoardSocket.RIGHT)
-        focal_length_in_pixels = intrinsics[0][0]
-        stereo_baseline = 7.5
-
         while True:
+
+            # get stereo depth image
+
             inDisparity = q.get()  # blocking call, will wait until a new data has arrived
             frame = inDisparity.getFrame()
             # Normalization for better visualization
-            # frame = (frame * (255 / depth.initialConfig.getMaxDisparity())).astype(np.uint8)
-            # cv2.imshow("disparity", frame)
+            frame = (frame * (255 / depth.initialConfig.getMaxDisparity())).astype(np.uint8)
 
-            depth_map = np.divide(focal_length_in_pixels * stereo_baseline, frame)
+            # get joystick input
+
+            # for event in pygame.event.get():
+            #     if event.type == pygame.QUIT:
+            #         break
+            #     # joystick axis is between [-1,1]  on each axis
+            #     x_speed = round(pygame.joystick.Joystick(0).get_axis(0) * 5)
+            #     y_speed = round(pygame.joystick.Joystick(0).get_axis(1) * 5)
+            #     if event.type == pygame.JOYBUTTONDOWN:
+            #         if pygame.joystick.Joystick(0).get_button(0):
+            #             pass
+            #         if pygame.joystick.Joystick(0).get_button(1):
+            #             pass
+
+            cv2.imshow("disparity", frame)
 
             # Available color maps: https://docs.opencv.org/3.4/d3/d50/group__imgproc__colormap.html
             frame = cv2.applyColorMap(frame, cv2.COLORMAP_JET)
-
-
-            frame_full[0:frame.shape[0], 0:frame.shape[1], :] = frame
-
-            cv2.imshow("disparity_color", frame_full)
+            cv2.imshow("disparity_color", frame)
 
             if cv2.waitKey(1) == ord('q'):
                 break
