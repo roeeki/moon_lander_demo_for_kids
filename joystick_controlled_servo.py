@@ -108,7 +108,7 @@ if __name__ == "__main__":
                 servo.setTarget(0, servo_target)  #set servo to move to center position
                 servo.setSpeed(0, servo_speed)     #set speed of servo 1
 
-                exec_time = (0.03/500)*np.abs(servo_target_diff)
+                exec_time = (0.02/500)*np.abs(servo_target_diff)
                 print('t={}'.format(exec_time))
                 time.sleep(exec_time)
 

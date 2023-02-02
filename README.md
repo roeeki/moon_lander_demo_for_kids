@@ -87,7 +87,7 @@ servo with f >= 0.017[sec/60deg] , torque >= 0.25[kg*cm] and 1cm wheel
 
 ## installation:
 
-Install depthai python:
+### Install depthai python:
 
 - install python 3
 - make your virtual python env (to be used for this project)
@@ -104,7 +104,7 @@ Install depthai python:
          my_python OAK_D_stereo_depth_demo.py
 
 
-- connect to joystick
+### connect to joystick
 
   1. install pygame in your python env
   2. connect joystick to usb
@@ -112,23 +112,42 @@ Install depthai python:
   
          my_python joystick_demo.py
 
-- install python maestro-servo
-
 ### Maestro-servo installation
 
-install pyserial:
+- install python maestro-servo
+
+- install pyserial:
 
                 pip install pyserial
 
-set the Maestro-servo to `USB Dual Port`:
+- set the Maestro-servo to `USB Dual Port`:
 
-1. Download the Maestro driver for linux for [here](https://www.pololu.com/docs/0J40/3.b)
-2. tar the file:
+  1. Download the Maestro driver for linux for [here](https://www.pololu.com/docs/0J40/3.b)
+  2. tar the file:
 
-                tar -xzvf ~/Downloads/maestro-linux-220509.tar.gz
-3. follow the `README.txt` file after tarring it.
+                  tar -xzvf ~/Downloads/maestro-linux-220509.tar.gz
+  3. follow the `README.txt` file after tarring it.
 
-4. run the `MaestroControlCenter` application and in the `setup` tab change it to `USB dual Port`.
+  4. run the `MaestroControlCenter` application and in the `setup` tab change it to `USB dual Port`.
 
 
+
+---
+
+## Usage:
+1. connect every thing in the following order:
+   1. connect joystick usb to laptop
+   2. OAK-D usb to laptop (must use USB3 cable and laptop USB3 port)
+   3. connect battery to maestro controller
+   4. connect maestro controller USB to laptop 
+2. run OAK_D_servo_depth.py
+3. run joystick_controlled_servo.py
+    - check timing and control parameters fit your specific setting:
+      - joystick gain - r
+      - servo speeds - servo_speed
+      - loop sleep time - exec_time
+    - check permissions: if you have permissions error try:
+
+          sudo chmod 777 /dev/ttyACM0
+          sudo chmod 777 /dev/ttyACM1
 
